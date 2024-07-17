@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-weight: 200;">COMPANY</title>
+    <style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+
+main {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+}
+
+.item {
+  width: 200px;
+  height: 300px;
+  list-style-type: none;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  background-position: center;
+  background-size: cover;
+  border-radius: 20px;
+  box-shadow: 0 20px 30px rgba(255,255,255,0.3) inset;
+  transition: transform 0.1s, left 0.75s, top 0.75s, width 0.75s, height 0.75s;
+
+  &:nth-child(1), &:nth-child(2) {
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    transform: none;
+    border-radius: 0;
+    box-shadow: none;
+    opacity: 1;
+  }
+
+  &:nth-child(3) { left: 50%; }
+  &:nth-child(4) { left: calc(50% + 220px); }
+  &:nth-child(5) { left: calc(50% + 440px); }
+  &:nth-child(6) { left: calc(50% + 660px); opacity: 0; }
+}
+
+.content {
+  width: min(30vw,400px);
+  position: absolute;
+  top: 50%;
+  left: 3rem;
+  transform: translateY(-50%);
+  font: 400 0.85rem helvetica,sans-serif;
+  color: white;
+  text-shadow: 0 3px 8px rgba(0,0,0,0.5);
+  opacity: 0;
+  display: none;
+
+  & .title {
+    font-family: 'arial-black';
+    text-transform: uppercase;
+  }
+
+  & .description {
+    line-height: 1.7;
+    margin: 1rem 0 1.5rem;
+    font-size: 0.8rem;
+  }
+
+  & button {
+    width: fit-content;
+    background-color: rgba(0,0,0,0.1);
+    color: white;
+    border: 2px solid white;
+    border-radius: 0.25rem;
+    padding: 0.75rem;
+    cursor: pointer;
+  }
+}
+
+.item:nth-of-type(2) .content {
+  display: block;
+  animation: show 0.75s ease-in-out 0.3s forwards;
+}
+
+@keyframes show {
+  0% {
+    filter: blur(5px);
+    transform: translateY(calc(-50% + 75px));
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+.nav {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 5;
+  user-select: none;
+
+  & .btn {
+    background-color: rgba(255,255,255,0.5);
+    color: rgba(0,0,0,0.7);
+    border: 2px solid rgba(0,0,0,0.6);
+    margin: 0 0.25rem;
+    padding: 0.75rem;
+    border-radius: 50%;
+    cursor: pointer;
+
+    &:hover {
+      background-color: rgba(255,255,255,0.3);
+    }
+  }
+}
+
+@media (width > 650px) and (width < 900px) {
+  .content {
+    & .title        { font-size: 1rem; }
+    & .description  { font-size: 0.7rem; }
+    & button        { font-size: 0.7rem; }
+  }
+  .item {
+    width: 160px;
+    height: 270px;
+
+    &:nth-child(3) { left: 50%; }
+    &:nth-child(4) { left: calc(50% + 170px); }
+    &:nth-child(5) { left: calc(50% + 340px); }
+    &:nth-child(6) { left: calc(50% + 510px); opacity: 0; }
+  }
+}
+
+@media (width < 650px) {
+  .content {
+    & .title        { font-size: 0.9rem; }
+    & .description  { font-size: 0.65rem; }
+    & button        { font-size: 0.7rem; }
+  }
+  .item {
+    width: 130px;
+    height: 220px;
+
+    &:nth-child(3) { left: 50%; }
+    &:nth-child(4) { left: calc(50% + 140px); }
+    &:nth-child(5) { left: calc(50% + 280px); }
+    &:nth-child(6) { left: calc(50% + 420px); opacity: 0; }
+  }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "futura md bt";
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+body {
+    background: dodgerblue;
+}
+header {
+    background: #fff;
+    width: 100%;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 50px;
+}
+header .logo {
+    font-size: 30px;
+    text-transform: uppercase;
+}
+header nav ul {
+    display: flex;
+}
+header nav ul li a {
+    display: inline-block;
+    color: #000;
+    padding: 5px 0;
+    margin: 0 10px;
+    border: 3px solid transparent;
+    text-transform: uppercase;
+    transition: 0.2s;
+}
+header nav ul li a:hover,
+header nav ul li a.active {
+    border-bottom-color: dodgerblue;
+}
+.hamburger {
+    cursor: pointer;
+    display: none;
+}
+.hamburger div {
+    width: 30px;
+    height: 3px;
+    margin: 5px 0;
+    background: #000;
+}
+@media only screen and (max-width: 900px) {
+    header {
+        padding: 0 30px;
+    }
+}
+@media only screen and (max-width: 700px) {
+    .hamburger {
+        display: block;
+    }
+    header nav {
+        position: absolute;
+        width: 100%;
+        left: -100%;
+        top: 50px;
+        width: 50%;
+        background: #fff;
+        padding: 30px;
+        transition: 0.3s;
+    }
+    header #nav_check:checked ~ nav {
+        left: 0;
+    }
+    header nav ul {
+        display: block;
+    }
+    header nav ul li a {
+        margin: 5px 0;
+    }
+}
+    </style>
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    /> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
+</head>
+<body style="background-color:rgb(46, 43, 43)">
+    <!-- Nav Bar Start -->
+    <header style="background-color: #000;">
+      <div><img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/450417142_1657525218339107_5722593886724615434_n.jpg?stp=dst-jpg_p350x350&_nc_cat=107&ccb=1-7&_nc_sid=0024fc&_nc_ohc=yH8vM_Atj14Q7kNvgGvyZR7&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_Q7cD1QFr34OEriNIvUAjkDdl-t-LCmjSbSdgj-Jm-hvdoBlVAQ&oe=66BCF98B" alt="" style="width: 60px;"></div>
+      <div  class="logo"  style="color: white; font-weight: 900; font-style: italic;"> UHM  &  COMPANY  PVT.LTD</div>
+      <input type="checkbox" id="nav_check" hidden>
+      <nav>  
+          <ul>
+              <li>
+                  <a href="C:\Users\LAPTOP LAB\Desktop\mart plus\index.html" class="active" style="color: white;font-weight: 500;font-style: italic;">COMPANY</a>
+              </li>
+              <li>
+                  <a href="./About-pg2.html" style="color: white;font-weight: 500;font-style: italic;">Services</a>
+              </li>
+              <li>
+                  <a href="./Typesofvirus-pg5.html" style="color: white;font-weight: 500;font-style: italic;">GALLERY</a>
+              </li>
+              <li>
+                  <a href="./Yearwiselisting-pg4.html" style="color: white;font-weight: 500;font-style: italic;">BLOG</a>
+              </li>
+              <li>
+                  <a href="./Contactus-pg3.html" style="color: white;font-weight: 500;font-style: italic;">CONTACT</a>
+              </li>
+              <li>
+                <a href="C:\Users\LAPTOP LAB\Desktop\mart plus\index3.html" style="color: white;font-weight: 500;font-style: italic;"> ABOUT US</a>
+            </li>
+          </ul>
+      </nav>
+      <label for="nav_check" class="hamburger">
+          <div></div>
+          <div></div>
+          <div></div>
+      </label>
+  </header>
+
+  <!-- Nav Bar End -->
+  
+  <!-- carousel start -->
+  <main>
+    <ul class='slider'>
+      <li class='item' style="background-image: url('https://avatars.mds.yandex.net/i?id=79114a0aa95aefc40a183a21fdf78e3a9f0b8348-9151250-images-thumbs&n=13')">
+        <div class='content'>
+          <h2 class='title'>"UHM & COMPANY PTV.LTD"</h2>
+          <p class='description' style="color: black;"> Planning and Design: Initial stages where project goals are defined, and architectural and engineering plans are developed.
+              </p>
+          <button>Read More</button>
+        </div>
+      </li>
+      <li class='item' style="background-image: url('https://avatars.mds.yandex.net/i?id=a4d247579cc5bdf2e2e4ff5d2f1585b2ecadb424-10512701-images-thumbs&n=13')">
+        <div class='content'>
+          <h2 class='title'>"UHM & COMPANY PTV.LTD"</h2>
+          <p class='description' style="color: black;"> Permitting and Approvals: Obtaining necessary licenses, permits, and regulatory approvals before construction begins.
+          </p>
+          <button>Read More</button>
+        </div>
+      </li>
+      <li class='item' style="background-image: url('https://avatars.mds.yandex.net/i?id=7a00a7adb9c173798161a42a87a043bbf48b92f9-6840111-images-thumbs&n=13')">
+        <div class='content'>
+          <h2 class='title'>"UHM & COMPANY PTV.LTD"</h2>
+          <p class='description' style="color: black;"> Construction Execution: Actual building and assembly of the project according to the design and plans.
+          </p>
+          <button>Read More</button>
+        </div>
+      </li>
+      <li class='item' style="background-image: url('https://avatars.mds.yandex.net/i?id=59e28da19e185ff99e8209aaf52158e51fa59af1417e19e7-4396111-images-thumbs&n=13')">
+        <div class='content'>
+          <h2 class='title'>"UHM & COMPANY PTV.LTD"</h2>
+          <p class='description' style="color: black;">
+            Project Management: Overseeing schedules, budgets, and resources to ensure the project is completed on time and within budget.
+          </p>
+          <button>Read More</button>
+        </div>
+      </li>
+      <li class='item' style="background-image: url('https://avatars.mds.yandex.net/i?id=4800542551af5fdedff9866cadeb84da7500823c-4589723-images-thumbs&n=13')">
+        <div class='content'>
+          <h2 class='title'>"UHM & COMPANY PTV.LTD"</h2>
+          <p class='description' style="color: black;">
+            Quality Control and Safety: Ensuring that construction meets quality standards and safety regulations to protect workers and the public.
+          </p>
+          <button>Read More</button>
+        </div>
+      </li>
+      <li class='item' style="background-image: url('https://avatars.mds.yandex.net/i?id=6778cc54a20ca37a47989d4d36842e7dae134311-6222399-images-thumbs&n=13')">
+        <div class='content'>
+          <h2 class='title'>"UHM & COMPANY PTV.LTD"</h2>
+          <p class='description' style="color: black;"> 
+            Completion and Handover: Final stages where the project is inspected, deficiencies are corrected, and ownership or operation of the completed project is transferred
+          </p>
+          <button>Read More</button>
+        </div>
+      </li>
+    </ul>
+    <nav class='nav'>
+      <ion-icon class='btn prev' name="arrow-back-outline"></ion-icon>
+      <ion-icon class='btn next' name="arrow-forward-outline"></ion-icon>
+    </nav>
+  </main>
+
+   <!-- carousel End -->
+
+ <!-- footer start -->
+ 
+
+  <!-- footer End -->
+
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+  <script>
+    const slider = document.querySelector('.slider');
+
+function activate(e) {
+  const items = document.querySelectorAll('.item');
+  e.target.matches('.next') && slider.append(items[0])
+  e.target.matches('.prev') && slider.prepend(items[items.length-1]);
+}
+
+document.addEventListener('click',activate,false);
+  </script>
+    
+</body>
+</html>

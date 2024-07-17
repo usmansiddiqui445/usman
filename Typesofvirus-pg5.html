@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GALLERY</title>
+    <style>
+      .head{
+        background-color: black;
+      }
+      .bod{
+        background-color: rgb(46, 43, 43);
+      }
+
+        * {
+    margin: 0;
+    padding: 0;
+    font-family: "futura md bt";
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+body {
+    background-color: #000;
+}
+header {
+    background-color:gray;
+    width: 100%;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 50px;
+}
+header .logo {
+    font-size: 30px;
+    text-transform: uppercase;
+}
+header nav ul {
+    display: flex;
+}
+header nav ul li a {
+    display: inline-block;
+    color: #000;
+    padding: 5px 0;
+    margin: 0 10px;
+    border: 3px solid transparent;
+    text-transform: uppercase;
+    transition: 0.2s;
+}
+header nav ul li a:hover,
+header nav ul li a.active {
+    border-bottom-color: black;
+}
+.hamburger {
+    cursor: pointer;
+    display: none;
+}
+.hamburger div {
+    width: 30px;
+    height: 3px;
+    margin: 5px 0;
+    background: #000;
+}
+@media only screen and (max-width: 900px) {
+    header {
+        padding: 0 30px;
+    }
+}
+@media only screen and (max-width: 700px) {
+    .hamburger {
+        display: block;
+    }
+    header nav {
+        position: absolute;
+        width: 100%;
+        left: -100%;
+        top: 70px;
+        width: 100%;
+        background:black;
+        padding: 30px;
+        transition: 0.3s;
+    }
+    header #nav_check:checked ~ nav {
+        left: 0;
+    }
+    header nav ul {
+        display: block;
+    }
+    header nav ul li a {
+        margin: 5px 0;
+    }
+}
+.animate__bounce{
+    animation-duration: 2s;
+}
+
+:root{
+  --background-dark: #2d3548;
+  --text-light: rgba(255,255,255,0.6);
+  --text-lighter: rgba(255,255,255,0.9);
+  --spacing-s: 8px;
+  --spacing-m: 16px;
+  --spacing-l: 24px;
+  --spacing-xl: 32px;
+  --spacing-xxl: 64px;
+  --width-container: 1200px;
+}
+
+*{
+  border: 0;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html{
+  height: 100%;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+}
+
+body{
+  height: 100%;
+}
+
+.hero-section{
+  align-items: flex-start;
+  background-image: linear-gradient();
+  display: flex;
+  min-height: 100%;
+  justify-content: center;
+  padding: var(--spacing-xxl) var(--spacing-l);
+}
+
+.card-grid{
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-column-gap: var(--spacing-l);
+  grid-row-gap: var(--spacing-l);
+  max-width: var(--width-container);
+  width: 100%;
+}
+
+@media(min-width: 540px){
+  .card-grid{
+    grid-template-columns: repeat(2, 1fr); 
+  }
+}
+
+@media(min-width: 960px){
+  .card-grid{
+    grid-template-columns: repeat(4, 1fr); 
+  }
+}
+
+.card{
+  list-style: none;
+  position: relative;
+}
+
+.card:before{
+  content: '';
+  display: block;
+  padding-bottom: 150%;
+  width: 100%;
+}
+
+.card__background{
+  background-size: cover;
+  background-position: center;
+  border-radius: var(--spacing-l);
+  bottom: 0;
+  filter: brightness(0.75) saturate(1.2) contrast(0.85);
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transform-origin: center;
+  trasnsform: scale(1) translateZ(0);
+  transition: 
+    filter 200ms linear,
+    transform 200ms linear;
+}
+
+.card:hover .card__background{
+  transform: scale(1.05) translateZ(0);
+}
+
+.card-grid:hover > .card:not(:hover) .card__background{
+  filter: brightness(0.5) saturate(0) contrast(1.2) blur(20px);
+}
+
+.card__content{
+  left: 0;
+  padding: var(--spacing-l);
+  position: absolute;
+  top: 0;
+}
+
+.card__category{
+  color: var(--text-light);
+  font-size: 0.9rem;
+  margin-bottom: var(--spacing-s);
+  text-transform: uppercase;
+}
+
+.card__heading{
+  color: var(--text-lighter);
+  font-size: 1.9rem;
+  text-shadow: 2px 2px 20px rgba(0,0,0,0.2);
+  line-height: 1.4;
+  word-spacing: 100vw;
+}
+.animate__bounceIn{
+    animation-duration: 3s;
+}
+.animate__bounceIn{
+    animation-duration: 3s;
+}
+.animate__bounceIn{
+    animation-duration: 3s;
+}
+.animate__bounceIn{
+    animation-duration: 3s;
+}
+.carousela{
+background-color: black;
+}
+.animate__backInLeft{
+  animation-duration: 2s;
+}
+#videoPlayer {
+            max-width: 100%;
+            height: auto;
+        }
+        .animate__backInLeft{
+          animation-duration: 2s;
+        }
+    </style>
+  <link rel="stylesheet" href="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="stylesheet" href="home.css">
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+</head>
+
+<body class="bod">
+    <header class="head">
+      <div><img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/450417142_1657525218339107_5722593886724615434_n.jpg?stp=dst-jpg_p350x350&_nc_cat=107&ccb=1-7&_nc_sid=0024fc&_nc_ohc=yH8vM_Atj14Q7kNvgGvyZR7&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_Q7cD1QFr34OEriNIvUAjkDdl-t-LCmjSbSdgj-Jm-hvdoBlVAQ&oe=66BCF98B" alt="" style="width: 60px;"></div>
+        <div class="logo" style="color: white; font-weight: 900; font-style: italic;">UHM & COMPANY PVT . LTD</div>
+        <input type="checkbox" id="nav_check" hidden>
+        <nav>
+            <ul>
+                <li>
+                    <a href="index.html" class="active" style="color: white;font-weight: 500;font-style: italic;">COMPANY</a>
+                </li>
+                <li>
+                    <a href="index4.html" style="color: white;font-weight: 500;font-style: italic;">Services</a>
+                </li>
+                <li>
+                  <a href="./Typesofvirus-pg5.html" style="color: white;font-weight: 500;font-style: italic;">GALLERY</a>
+              </li>
+                <li>
+                    <a href="./Yearwiselisting-pg4.html" style="color: white;font-weight: 500;font-style: italic;">Blog</a>
+                </li>
+                <li>
+                    <a href="./Contactus-pg3.html"style="color: white;font-weight: 500;font-style: italic;">CONTACT</a>
+                </li>
+                <li>
+                    <a href="C:\Users\LAPTOP LAB\Desktop\mart plus\index3.html" style="color: white;font-weight: 500;font-style: italic;">ABOUT US </a>
+                </li>
+            </ul>
+        </nav>
+        <label for="nav_check" class="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </label>
+    </header>
+  
+
+  <h1 style="text-align: center; color: white;" class="animate__bounce"><b>GALLERY</b></h1>
+  
+  <!-- Carousel Start -->
+
+  <div class="containera">
+    <div class="carousela">
+      <div class="carousel__face1"><span></span></div>
+      <div class="carousel__face1"><span></span></div>
+      <div class="carousel__face1"><span></span></div>
+      <div class="carousel__face1"><span></span></div>
+      <div class="carousel__face1"><span></span></div>
+      <div class="carousel__face1"><span></span></div>
+      <div class="carousel__face1"><span></span></div>
+      <div class="carousel__face1"><span></span></div>
+      <div class="carousel__face1"><span></span></div>
+    </div>
+  </div>
+
+  <!-- Carousel End -->
+  <h2 style="text-align: center; color: white;"  class="animate__backInLeft">The Coffee Bean & Tea Leaf</h2>
+  <p style="color: white;">
+     1) Byco branch completed ( 7/june/2024)
+  </p>
+
+  <h2 style="text-align: center; color: white;"  class="animate__backInLeft">The Flamme Cafe</h2>
+  <p style="color: white;">
+   2) DHA PHASE (8) Completed ( 5/Augest/2022)
+  </p>
+  <h2 style="text-align: center; color: white;"  class="animate__backInLeft">COCONUT GROVE</h2>
+  <P style="color: white;">
+  3) TIPU SULTAN ROAD Completed (10/Dec/2021)
+  </P>
+  <h2 style="text-align: center; color: white;"  class="animate__backInLeft">HARDEES</h2>
+  <P style="color: white;">
+   4) LAHORE BRANCH (20/MAY/2014)
+  </P>
+  <h2 style="text-align: center; color: white;"  class="animate__backInLeft">FLAGPOLE</h2>
+  <P style="color: white;">
+   5) BAHRIA TOWN KARACHI (14/AUG/2020)
+  </P>
+  <h2 style="text-align: center; color: white;"  class="animate__backInLeft">KFS SINDHI MUSLIM</h2>
+  <P style="color: white;">
+   6) KARACHI BRANCH (NEW YEAR OPENING,2019)
+  </P>
+  <h2 style="text-align: center; color: white;"  class="animate__backInLeft">INTERNATONAL WATCH COMPANY</h2>
+  <P style="color: white;">
+   7) KARACHI MAIN DOLMEN MALL CLFITON (2018)
+  </P>
+
+  <section class="hero-section">
+    <div class="card-grid">
+      <a class="card" href="#">
+        <div class="card__background" style="background-image: url(https://avatars.mds.yandex.net/i?id=364a5ec8eb00d81a6793f9e08c0b8251ccfd709f-8437558-images-thumbs&n=13)"></div>
+        <div class="card__content">
+          <p class="card__category">UHM & COMPANY PVT . LTD</p>
+          <h3 class="card__heading animate__bounceIn">CUSTOM HOME BUILDING</h3>
+        </div>
+      </a>
+      <a class="card" href="#">
+        <div class="card__background" style="background-image: url(https://avatars.mds.yandex.net/i?id=722b73887d10ff765d10bea4004c3af29190845b-10792024-images-thumbs&n=13)"></div>
+        <div class="card__content">
+          <p class="card__category">UHM & COMPANY PVT . LTD</p>
+          <h3 class="card__heading animate__bounceIn">KITCHEN REMODELING</h3>
+        </div>
+      </a>
+      <a class="card" href="#">
+        <div class="card__background" style="background-image: url(https://avatars.mds.yandex.net/i?id=a9c730b7e785486a57c0dfb8da27c0e182d18238-10639540-images-thumbs&n=13)"></div>
+        <div class="card__content">
+          <p class="card__category">UHM & COMPANY PVT . LTD</p>
+          <h3 class="card__heading animate__bounceIn">BATHROOM REMODELING</h3>
+        </div>
+      </li>
+      <a class="card" href="#">
+        <div class="card__background" style="background-image: url(https://avatars.mds.yandex.net/i?id=579505f5bbb3a1e4a7ca68291bcd3a1aa652285a-12714984-images-thumbs&n=13)"></div>
+        <div class="card__content">
+          <p class="card__category">UHM & COMPANY PVT . LTD</p>
+          <h3 class="card__heading animate__bounceIn">ROOM REMODELING</h3>
+        </div>
+      </a>
+    <div>
+  </section>
+
+
+
+  
+
+  <!-- footer -->
+
+  <footer class="footer-section">
+    <div class="container">
+        <div class="footer-cta pt-5 pb-5">
+            <div class="row">
+                <div class="col-xl-4 col-md-4 mb-30">
+                    <div class="single-cta">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div class="cta-text">
+                            <h4>Find us</h4>
+                            <span>PLOT NO .A-32,OFFICE NO,502,BLOCK-7/8, K.C.H.S.U. AMBER ESTATE EXTN SHAHRAH E FAISAL , KARACHI-EAST 
+                                CELL : 03303789136 Hassansiddiqui445@gmail.com</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-md-4 mb-30">
+                    <div class="single-cta">
+                        <i class="fas fa-phone"></i>
+                        <div class="cta-text">
+                            <h4>Call us</h4>
+                            <span>03303789136</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-md-4 mb-30">
+                    <div class="single-cta">
+                        <i class="far fa-envelope-open"></i>
+                        <div class="cta-text">
+                            <h4>Mail us</h4>
+                            <span>
+                                hassansiddiqui445@gmail.com</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-content pt-5 pb-5">
+            <div class="row">
+                <div class="col-xl-4 col-lg-4 mb-50">
+                    <div class="footer-widget">
+                        <div class="footer-logo">
+                            <a href="index.html"><img src="https://avatars.mds.yandex.net/i?id=c919f1e109c766e4875d0d7f185e84f51a828198-4841251-images-thumbs&n=13" class="img-fluid" alt="logo"></a>
+                        </div>
+                        <div class="footer-text">
+                            <p>UHM & COMPANY PVT . LTD</p>
+                        </div>
+                        <div class="footer-social-icon">
+                            <span>Follow us</span>
+                            <a href="#"><i class="fab fa-facebook-f facebook-bg"></i></a>
+                            <a href="#"><i class="fab fa-twitter twitter-bg"></i></a>
+                            <a href="#"><i class="fab fa-google-plus-g google-bg"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-6 mb-30">
+                    <div class="footer-widget">
+                        <div class="footer-widget-heading">
+                            <h3>Useful Links</h3>
+                        </div>
+                        <ul>
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">about</a></li>
+                            <li><a href="#">services</a></li>
+                            <li><a href="#">portfolio</a></li>
+                            <li><a href="#">Contact</a></li>
+                            <li><a href="#">About us</a></li>
+                            <li><a href="#">Our Services</a></li>
+                            <li><a href="#">Expert Team</a></li>
+                            <li><a href="#">Contact us</a></li>
+                            <li><a href="#">Latest News</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-6 mb-50">
+                    <div class="footer-widget">
+                        <div class="footer-widget-heading">
+                            <h3>Subscribe</h3>
+                        </div>
+                        <div class="footer-text mb-25">
+                            <p>Don’t miss to subscribe to our new feeds, kindly fill the form below.</p>
+                        </div>
+                        <div class="subscribe-form">
+                            <form action="#">
+                                <input type="text" placeholder="Email Address">
+                                <button><i class="fab fa-telegram-plane"></i></button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="copyright-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-6 col-lg-6 text-center text-lg-left">
+                    <div class="copyright-text">
+                        <p>Copyright &copy; 2018, All Right Reserved <a href="https://codepen.io/anupkumar92/">Anup</a></p>
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-6 d-none d-lg-block text-right">
+                    <div class="footer-menu">
+                        <ul>
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">Terms</a></li>
+                            <li><a href="#">Privacy</a></li>
+                            <li><a href="#">Policy</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+    
+      
+
+  <!-- Footer end -->
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

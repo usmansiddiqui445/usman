@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Blog</title>
+    <style>
+        .animate__flipInX{
+            animation-duration: 4s;
+            text-align: center;
+            color:whitesmoke;
+            font-size:large;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        body{
+    margin: 0 auto;
+    padding: 1vh;
+    max-width: 10000px;
+    font-family: Poppins, 'open sans';
+    background-color: #f5f6f7;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+header{
+    display: block;
+    background-image: url(https://i.pinimg.com/564x/71/42/ab/7142ab2c11c06601e00714646fd14623.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-y:bottom;
+    padding: 1.5rem;
+
+}
+#title{
+    text-align: center;
+    color: crimson;
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+    text-shadow: 2px 2px white;
+}
+#description{
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+    font-weight: 600;
+    text-align: center;
+    background-color: crimson;
+    color: #f5f6f7;
+    padding-top: 1rem;
+    padding-bottom: 1rem ;
+}
+.wrapper{
+    padding: 1vh;
+    border: 2px solid;
+    background-color: white;
+}
+
+#survey-form{
+    padding: 2rem;
+}
+#name-label, #email-label, #number-label, .dropdown-label{
+    display: block;
+    width: 100%;
+    margin-bottom: 2rem;
+    font-weight: 600;
+    color: crimson;
+}
+#name, #email, #number{
+    display: block;
+    width: 98%;
+    padding: 0.8rem;
+    border: none;
+    border-bottom: 1px solid;
+    margin-top: 0.8rem;
+    outline: 0;
+    background-color: rgba(220, 20, 60, 0.062);
+
+}
+.p-label{
+    font-weight: 600;
+    color: crimson;   
+}
+select{
+    display: block;
+    width: inherit;
+    padding: 0.8rem;
+    border: none;
+    border-bottom: 1px solid;
+    margin-top: 0.8rem;
+}
+
+label{
+display: block;
+}
+textarea{
+    width: 99%;
+    border: 1px solid;
+    border-radius: 5px;
+    padding: 5px;
+    outline: 0;
+}
+input[type="checkbox"]{
+    margin-bottom: 0.8rem;
+}
+#submit{
+    display: block;
+    background-color: crimson;
+    color: white;
+    width: 100%;
+    margin-top: 1rem;
+    padding: 0.8rem;
+    font-weight: bold;
+    border: none;
+}
+
+/* BREAKPOINTS */
+@media(min-width:700px){
+   .wrapper{
+       display: grid;
+       grid-template-columns: 40% 60%;
+       height: 100%;
+   }
+
+   #title{
+    margin-top: 350px;
+   }
+}
+.navbar{
+    width: 100%;
+    height: 100%;
+}
+
+
+
+
+ul {
+    margin: 0px;
+    padding: 0px;
+}
+.footer-section {
+  background: #151414;
+  position: relative;
+}
+.footer-cta {
+  border-bottom: 1px solid #373636;
+}
+.single-cta i {
+  color: #ff5e14;
+  font-size: 30px;
+  float: left;
+  margin-top: 8px;
+}
+.cta-text {
+  padding-left: 15px;
+  display: inline-block;
+}
+.cta-text h4 {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+.cta-text span {
+  color: #757575;
+  font-size: 15px;
+}
+.footer-content {
+  position: relative;
+  z-index: 2;
+}
+.footer-pattern img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 330px;
+  background-size: cover;
+  background-position: 100% 100%;
+}
+.footer-logo {
+  margin-bottom: 30px;
+}
+.footer-logo img {
+    max-width: 200px;
+}
+.footer-text p {
+  margin-bottom: 14px;
+  font-size: 14px;
+      color: #7e7e7e;
+  line-height: 28px;
+}
+.footer-social-icon span {
+  color: #fff;
+  display: block;
+  font-size: 20px;
+  font-weight: 700;
+  font-family: 'Poppins', sans-serif;
+  margin-bottom: 20px;
+}
+.footer-social-icon a {
+  color: #fff;
+  font-size: 16px;
+  margin-right: 15px;
+}
+.footer-social-icon i {
+  height: 40px;
+  width: 40px;
+  text-align: center;
+  line-height: 38px;
+  border-radius: 50%;
+}
+.facebook-bg{
+  background: #3B5998;
+}
+.twitter-bg{
+  background: #55ACEE;
+}
+.google-bg{
+  background: #DD4B39;
+}
+.footer-widget-heading h3 {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 40px;
+  position: relative;
+}
+.footer-widget-heading h3::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -15px;
+  height: 2px;
+  width: 50px;
+  background: #ff5e14;
+}
+.footer-widget ul li {
+  display: inline-block;
+  float: left;
+  width: 50%;
+  margin-bottom: 12px;
+}
+.footer-widget ul li a:hover{
+  color: #ff5e14;
+}
+.footer-widget ul li a {
+  color: #878787;
+  text-transform: capitalize;
+}
+.subscribe-form {
+  position: relative;
+  overflow: hidden;
+}
+.subscribe-form input {
+  width: 100%;
+  padding: 14px 28px;
+  background: #2E2E2E;
+  border: 1px solid #2E2E2E;
+  color: #fff;
+}
+.subscribe-form button {
+    position: absolute;
+    right: 0;
+    background: #ff5e14;
+    padding: 13px 20px;
+    border: 1px solid #ff5e14;
+    top: 0;
+}
+.subscribe-form button i {
+  color: #fff;
+  font-size: 22px;
+  transform: rotate(-6deg);
+}
+.copyright-area{
+  background: #202020;
+  padding: 25px 0;
+}
+.copyright-text p {
+  margin: 0;
+  font-size: 14px;
+  color: #878787;
+}
+.copyright-text p a{
+  color: #ff5e14;
+}
+.footer-menu li {
+  display: inline-block;
+  margin-left: 20px;
+}
+.footer-menu li:hover a{
+  color: #ff5e14;
+}
+.footer-menu li a {
+  font-size: 14px;
+  color: #878787;
+}
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
+
+
+.call-btn {
+    position: fixed;
+    margin: 0;
+    padding: 0;
+    left: 0;
+    bottom: 0px;
+    background: #fff;
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 0;
+    width: 110px;
+    height: 110px;
+    z-index: 1000;
+}
+
+.call-btn .tada {
+    background: #ff9002;
+    border-radius: 100px;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-top: -20px;
+    margin-left: -20px;
+    animation-name: tada;
+    animation-duration: 0.5s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+.call-btn .tada a:before {
+    font-family: FontAwesome;
+    content: "\f095";
+    font-size: 25px;
+    
+    text-decoration: none;
+    color: #fff;
+    margin-left: 10px;
+    position: absolute;
+    top: 50%;
+    margin-top: -10px;
+}
+
+
+@keyframes tada {
+    from {
+        transform: rotate(-20deg);
+    }
+    to {
+        transform: rotate(20deg);
+    }
+}
+
+.call-btn .pulse {
+    width: 60px;
+    height: 60px;
+    background: rgba(255, 144, 2, 0.39);
+    ;
+    border-radius: 100px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -30px;
+    margin-left: -30px;
+    animation-name: pulse;
+    animation-duration: 0.5s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes pulse {
+    from {
+        width: 55px;
+        height: 55px;
+        margin-top: -27.5px;
+        margin-left: -27.5px;
+    }
+    to {
+        width: 60px;
+        height: 60px;
+        margin-top: -30px;
+        margin-left: -30px;
+    }
+}
+
+.call-btn .zoomIn {
+    width: 80px;
+    height: 80px;
+    border: 2px solid #ff9002;
+    border-radius: 100px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -40px;
+    margin-left: -40px;
+    animation-name: zoomIn;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-out;
+}
+
+@keyframes zoomIn {
+    from {
+        width: 40px;
+        height: 40px;
+        margin-top: -20px;
+        margin-left: -20px;
+    }
+    to {
+        width: 80px;
+        height: 80px;
+        margin-top: -40px;
+        margin-left: -40px;
+    }
+}
+
+@media screen and (max-width: 549px) {
+    .call-btn {
+        width: 80px;
+        height: 80px;
+    }
+}
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "futura md bt";
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+body {
+    background: dodgerblue;
+}
+header {
+    background: #fff;
+    width: 100%;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 50px;
+}
+header .logo {
+    font-size: 30px;
+    text-transform: uppercase;
+}
+header nav ul {
+    display: flex;
+}
+header nav ul li a {
+    display: inline-block;
+    color: #000;
+    padding: 5px 0;
+    margin: 0 10px;
+    border: 3px solid transparent;
+    text-transform: uppercase;
+    transition: 0.2s;
+}
+header nav ul li a:hover,
+header nav ul li a.active {
+    border-bottom-color: dodgerblue;
+}
+.hamburger {
+    cursor: pointer;
+    display: none;
+}
+.hamburger div {
+    width: 30px;
+    height: 3px;
+    margin: 5px 0;
+    background: #000;
+}
+@media only screen and (max-width: 900px) {
+    header {
+        padding: 0 30px;
+    }
+}
+@media only screen and (max-width: 700px) {
+    .hamburger {
+        display: block;
+    }
+    header nav {
+        position: absolute;
+        width: 100%;
+        left: -100%;
+        top: 70px;
+        width: 100%;
+        background: #fff;
+        padding: 30px;
+        transition: 0.3s;
+    }
+    header #nav_check:checked ~ nav {
+        left: 0;
+    }
+    header nav ul {
+        display: block;
+    }
+    header nav ul li a {
+        margin: 5px 0;
+    }
+}html, body {
+  background : #222;
+}
+
+.circular-carousal {
+  display: flex;
+  justify-content: center;
+  width : 800px;
+  height : 400px;
+  margin : 0 auto;
+  perspective: 250px;
+  perspective-origin: 50% 50%;
+  
+  .circular-carousal--image {
+    width: 350px;
+    height : 250px;
+    overflow : hidden;
+    align-self: center;
+    background: #e3e3e3;
+    box-shadow : 1px 1px 5px 1px #000;
+    transition: all 0.5s ease-in-out;
+    flex-basis : auto;
+    &.far-left {
+      transform: rotateY(-35deg) scale(0.5,0.5);
+      visibility: hidden;
+      order : 1;
+      flex-shrink:10;
+    }
+    &.left {
+      transform: rotateY(-25deg) scale(0.7,0.7);
+      order : 2;
+    }
+    &.center {
+      order : 3;
+    }
+    &.right {
+      transform: rotateY(25deg) scale(0.7,0.7);
+      order : 4;
+    }
+    &.far-right {
+      transform: rotateY(35deg) scale(0.5,0.5);
+      visibility: hidden;
+      order : 5;
+      flex-shrink: 10;
+    }
+  }
+}
+.animate__heartBeat{
+    animation-duration: 3s;
+}
+    </style>
+    <link rel="stylesheet" href="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="./home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body style="background-color: rgb(46, 43, 43)">
+  <header style="background-color: black">
+    <div><img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/450417142_1657525218339107_5722593886724615434_n.jpg?stp=dst-jpg_p350x350&_nc_cat=107&ccb=1-7&_nc_sid=0024fc&_nc_ohc=yH8vM_Atj14Q7kNvgGvyZR7&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_Q7cD1QFr34OEriNIvUAjkDdl-t-LCmjSbSdgj-Jm-hvdoBlVAQ&oe=66BCF98B" alt="" style="width: 60px;"></div>
+    <div class="logo" style="color: white; font-weight: 900; font-style: italic;">UHM & COMPANY PVT . LTD</div><div><img src="" alt=""></div>
+    <input type="checkbox" id="nav_check" hidden>
+    <nav>
+        <ul>
+            <li>
+                <a href="C:\Users\LAPTOP LAB\Desktop\mart plus\home.html" class="active" style="color: white;font-weight: 500;font-style: italic;">COMPANY</a>
+            </li>
+            <li>
+                <a href="./About-pg2.html" style="color: white;font-weight: 500;font-style: italic;">Services</a>
+            </li>
+            <li>
+              <a href="./Typesofvirus-pg5.html"style="color: white;font-weight: 500;font-style: italic;">GALLERY</a>
+          </li>
+            <li>
+                <a href="./Yearwiselisting-pg4.html" style="color: white;font-weight: 500;font-style: italic;">Blog</a>
+            </li>
+            <li>
+                <a href="./Contactus-pg3.html"style="color: white;font-weight: 500;font-style: italic;">CONTACT</a>
+            </li>
+            <li>
+                <a href="C:\Users\LAPTOP LAB\Desktop\mart plus\index3.html"style="color: white;font-weight: 500;font-style: italic;"> ABOUT US </a>
+            </li>
+        </ul>
+    </nav>
+    <label for="nav_check" class="hamburger">
+        <div></div>
+        <div></div>
+        <div></div>
+    </label>
+</header>
+
+    <h1 style="text-align: center; color: aliceblue; font-size: xx-large; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; animation-duration: 2s;
+    text-align: center;" class="animate__fadeInUpBig" > <B>BLOG</B></h1>
+
+    <h2 class="animate__flipInX">COMPANY / BLOG</h2>
+    
+    <div class="content-block content-block--circular-carousal">
+        <div class="grid-container">
+          <div class="grid-row">
+            <div class="grid-cell-4of4--phone">
+              <div class="circular-carousal">
+                <div class="circular-carousal--image">
+                  <img src="https://avatars.mds.yandex.net/i?id=bfcbab4eb25ce3821563dcaec861fc1a69aff5c7-4827941-images-thumbs&n=13" alt="" />
+                </div>
+                <div class="circular-carousal--image">
+                  <img src="https://avatars.mds.yandex.net/i?id=ab5e2d3baf9768bc1ac43dcb6d53d3db95e0fcc2385afe52-5430108-images-thumbs&n=13" alt="" />
+                </div>
+                <div class="circular-carousal--image image2">
+                  <img src="https://avatars.mds.yandex.net/i?id=89f65b2c9e7ee5f9ccb3ced7d12dc3cdacf4d9eb-9881038-images-thumbs&n=13" alt="" />
+                </div>
+                <div class="circular-carousal--image">
+                  <img src="https://avatars.mds.yandex.net/i?id=91aef3e1128fb86325ff0862262fe32c0c2b8401-4590689-images-thumbs&n=13" alt="" />
+                </div>
+                <div class="circular-carousal--image">
+                  <img src="https://avatars.mds.yandex.net/i?id=ee606bab9c24821b354b2d4c9886f0a5f158400c-10702699-images-thumbs&n=13" alt="" />
+                </div>
+                <div class="circular-carousal--image">
+                  <img src="https://avatars.mds.yandex.net/i?id=6ed5ad866e3f872bf31d2fe5be638efec117015d-4033370-images-thumbs&n=13" alt="" />
+                </div>
+                <div class="circular-carousal--image">
+                  <img src="https://avatars.mds.yandex.net/i?id=fc7a5182fd43bb949db2bdd9923d27d82aaa309d-9069085-images-thumbs&n=13" alt="" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+  <h1 style="color: white;font-weight: 500;" class="animate__heartBeat">
+    Exploring Excellence in Construction with UHM & Company
+  </h1>
+  <h3 style="color: white;font-weight: 300;" >
+    Welcome to our blog, where we delve into the world of construction excellence with a spotlight on UHM & Company. Founded on principles of innovation, quality, and client satisfaction, UHM & Company has emerged as a leader in the construction industry, setting benchmarks for others to follow
+  </h3>
+
+  <h1 style="color: white;font-weight: 500;" class="animate__heartBeat">
+    A Legacy of Innovation and Expertise
+  </h1>
+  <h3 style="color: white;font-weight: 300;">
+    UHM & Company, established in 2004, has continuously pushed the boundaries of what is possible in construction. From residential complexes to commercial skyscrapers, their portfolio speaks volumes about their commitment to delivering projects that blend architectural brilliance with structural integrity
+  </h3>
+
+  <h1 style="color: white;font-weight: 500;" class="animate__heartBeat">
+    Commitment to Quality
+  </h1>
+  <h3 style="color: white;font-weight: 300;">
+    At the heart of UHM & Company's success lies a relentless pursuit of quality. Every project undertaken by UHM & Company is a testament to meticulous planning, attention to detail, and the use of cutting-edge technology. Their adherence to the highest standards ensures that each structure not only meets but exceeds expectations.
+  </h3>
+
+
+  <h1 style="color: white;font-weight: 500;" class="animate__heartBeat">
+Client-Centric Approach
+  </h1>
+  <h3 style="color: white;font-weight: 300;">
+    UHM & Company places immense value on client relationships. They believe in fostering partnerships built on trust, transparency, and open communication. From initial concept discussions to project completion, clients are involved every step of the way, ensuring their vision is realized with precision.
+  </h3>
+
+
+  <h1 style="color: white;font-weight: 500;" class="animate__heartBeat">
+    Sustainable Construction Practices
+  </h1>
+  <h3 style="color: white;font-weight: 300;" >
+    Recognizing the importance of sustainability, UHM & Company integrates environmentally-friendly practices into their projects. They utilize eco-conscious materials, implement energy-efficient solutions, and prioritize green building certifications. Their efforts not only minimize environmental impact but also contribute to creating healthier communities.
+  </h3>
+
+
+
+  <h1 style="color: white;font-weight: 500;"class="animate__heartBeat">
+    Embracing Technology and Innovation
+  </h1>
+  <h3 style="color: white;font-weight: 300;" >
+    In an ever-evolving industry, UHM & Company stays ahead by embracing the latest advancements in construction technology. Whether it's leveraging virtual reality for design visualization or employing drones for site surveys, they harness innovation to enhance efficiency, accuracy, and safety on-site.
+  </h3>
+
+
+
+  <h1 style="color: white;font-weight: 500;" class="animate__heartBeat">
+    Community Engagement and Social Responsibility
+  </h1>
+  <h3 style="color: white;font-weight: 300;">
+    Beyond their projects, UHM & Company is committed to giving back to the community. They actively participate in local initiatives, support educational programs in construction, and contribute to charitable causes, demonstrating their role as a responsible corporate citizen.
+  </h3>
+
+
+
+  <h1 style="color: white;font-weight: 500;" class="animate__heartBeat">
+    Looking Ahead
+  </h1>
+  <h3 style="color: white;font-weight: 300;" >
+    As UHM & Company continues to grow, their future remains bright with a pipeline of exciting projects that promise to redefine skylines and communities alike. With a legacy of excellence and a vision for the future, UHM & Company stands poised to lead the construction industry into new realms of possibility.
+  </h3>
+
+
+
+  <h1 style="color: white;font-weight: 500;" class="animate__heartBeat">
+    Join the Conversation
+  </h1>
+  <h3 style="color: white;font-weight: 300;" >
+    We invite you to join us on this journey as we explore the world of UHM & Company, celebrating their achievements, innovations, and impact on the construction landscape. Stay tuned for more insights, interviews, and stories that showcase why UHM & Company is not just building structures but shaping the future of construction.
+  </h3>
+
+
+  
+      <footer class="footer-section">
+        <div class="container">
+            <div class="footer-cta pt-5 pb-5">
+                <div class="row">
+                    <div class="col-xl-4 col-md-4 mb-30">
+                        <div class="single-cta">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div class="cta-text">
+                                <h4>Find us</h4>
+                                <span>PLOT NO .A-32,OFFICE NO,502,BLOCK-7/8, K.C.H.S.U. AMBER ESTATE EXTN SHAHRAH E FAISAL , KARACHI-EAST 
+                                  CELL : 03303789136 Hassansiddiqui445@gmail.com</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-md-4 mb-30">
+                        <div class="single-cta">
+                            <i class="fas fa-phone"></i>
+                            <div class="cta-text">
+                                <h4>Call us</h4>
+                                <span>03303789136</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-md-4 mb-30">
+                        <div class="single-cta">
+                            <i class="far fa-envelope-open"></i>
+                            <div class="cta-text">
+                                <h4>Mail us</h4>
+                                <span>
+                                  hassansiddiqui445@gmail.com</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-content pt-5 pb-5">
+                <div class="row">
+                    <div class="col-xl-4 col-lg-4 mb-50">
+                        <div class="footer-widget">
+                            <div class="footer-logo">
+                                <a href="index.html"><img src="https://avatars.mds.yandex.net/i?id=c919f1e109c766e4875d0d7f185e84f51a828198-4841251-images-thumbs&n=13" class="img-fluid" alt="logo"></a>
+                            </div>
+                            <div class="footer-text">
+                                <p>UHM & COMPANY PVT . LTD</p>
+                            </div>
+                            <div class="footer-social-icon">
+                                <span>Follow us</span>
+                                <a href="#"><i class="fab fa-facebook-f facebook-bg"></i></a>
+                                <a href="#"><i class="fab fa-twitter twitter-bg"></i></a>
+                                <a href="#"><i class="fab fa-google-plus-g google-bg"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-6 mb-30">
+                        <div class="footer-widget">
+                            <div class="footer-widget-heading">
+                                <h3>Useful Links</h3>
+                            </div>
+                            <ul>
+                                <li><a href="#">Home</a></li>
+                                <li><a href="#">about</a></li>
+                                <li><a href="#">services</a></li>
+                                <li><a href="#">portfolio</a></li>
+                                <li><a href="#">Contact</a></li>
+                                <li><a href="#">About us</a></li>
+                                <li><a href="#">Our Services</a></li>
+                                <li><a href="#">Expert Team</a></li>
+                                <li><a href="#">Contact us</a></li>
+                                <li><a href="#">Latest News</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-6 mb-50">
+                        <div class="footer-widget">
+                            <div class="footer-widget-heading">
+                                <h3>Subscribe</h3>
+                            </div>
+                            <div class="footer-text mb-25">
+                                <p>Don’t miss to subscribe to our new feeds, kindly fill the form below.</p>
+                            </div>
+                            <div class="subscribe-form">
+                                <form action="#">
+                                    <input type="text" placeholder="Email Address">
+                                    <button><i class="fab fa-telegram-plane"></i></button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copyright-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-6 col-lg-6 text-center text-lg-left">
+                        <div class="copyright-text">
+                            <p>Copyright &copy; 2018, All Right Reserved <a href="https://codepen.io/anupkumar92/">Anup</a></p>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-6 d-none d-lg-block text-right">
+                        <div class="footer-menu">
+                            <ul>
+                                <li><a href="#">Home</a></li>
+                                <li><a href="#">Terms</a></li>
+                                <li><a href="#">Privacy</a></li>
+                                <li><a href="#">Policy</a></li>
+                                <li><a href="#">Contact</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+  
+        
+        
+        <!-- Footer end -->
+          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+          <script>
+            (function() {
+  var circularCarousal = {
+    init: function() {
+      _this = this;
+      _this.order = [];
+      _this.images = document.getElementsByClassName('circular-carousal--image');
+      for (var i = 0; i < _this.images.length; i++) {
+        _this.images[i].addEventListener('click', function(event) {
+          _this.rotate(event);
+        });
+      }
+      _this.process();
+    },
+    process: function() {
+      var totalImages, leftImageIndex, centerImageIndex, rightImageIndex;
+      totalImages = _this.images.length;
+      centerImageIndex = (totalImages % 2 == 0) ? (totalImages / 2) : Math.ceil(totalImages / 2);
+      centerImageIndex--;
+      leftImageIndex = centerImageIndex - 1;
+      rightImageIndex = centerImageIndex + 1;
+      for (var i = 0; i < leftImageIndex; i++) {
+        _this.order[i] = 'far-left';
+      }
+      for (var i = rightImageIndex; i < _this.images.length; i++) {
+        _this.order[i] = 'far-right';
+      }
+      _this.order[centerImageIndex] = 'center';
+      _this.order[leftImageIndex] = 'left';
+      _this.order[rightImageIndex] = 'right';
+      _this.render();
+      
+    },
+    render: function() {
+      for (var i = 0; i < _this.images.length; i++) {
+        _this.order.forEach(function(element, index) {
+          console.log(_this.images);
+          _this.images[i].classList.remove(element);
+        })
+        _this.images[i].classList.add(_this.order[i]);
+      }
+    },
+    rotate: function(event) {
+      var clickedImage = event.currentTarget;
+      if (clickedImage.classList.contains('left')) {
+        _this.order.push(_this.order.shift());
+      }
+      if (clickedImage.classList.contains('right')) {
+        _this.order.unshift(_this.order.pop());
+      }
+      _this.render();
+    }
+  };
+  circularCarousal.init();
+})();
+          </script>
+</body>
+</html> 
